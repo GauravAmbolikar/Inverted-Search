@@ -2,6 +2,11 @@
 
 int main(int argc, char *argv[])
 {
+    if(argc < 2)
+    {
+        printf("Error: No input files provided.\n");
+        return 0;
+    }
     Flist *f_head = NULL;
 
     //initialize hash table
