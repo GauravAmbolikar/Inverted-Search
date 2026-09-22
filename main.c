@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     if(read_and_validate(argc, argv, &f_head) == SUCCESS)
     {
-        printf("read and validate input is success\n");
+        printf("Read and Validate input files is success\n");
 
         int choice;
 
@@ -37,12 +37,15 @@ int main(int argc, char *argv[])
                     break;
                 case 3:
                     //search
+                    search_db(ht);
                     break;
                 case 4:
                     //update
+                    update_db(&f_head, ht);
                     break;
                 case 5:
                     //save
+                    save_db(ht);
                     break;
                 case 6:
                     //Exit

@@ -37,5 +37,8 @@ int read_and_validate(int argc,char *argv[], Flist **head);
 int insert_fileName(Flist **head, char *filename);
 int create_db(Flist *f_head, hash_t *ht);
 int display_db(hash_t *ht);
+int search_db(hash_t *ht);
+int save_db(hash_t *ht);
+int update_db(Flist **head, hash_t *ht);
 
 #endif

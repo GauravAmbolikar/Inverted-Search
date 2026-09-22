@@ -17,23 +17,27 @@ int display_db(hash_t *ht)
 
         while(mtemp != NULL)
         {
-            printf("[%d][%s] %dfiles:", i, mtemp->word, mtemp->fileCount);
+            printf("[%d][%s] %dfiles:-", i, mtemp->word, mtemp->fileCount);
 
             Slist *stemp = mtemp->sublink;
 
             while(stemp != NULL)
             {
                 printf(" file : %s : %dtimes", stemp->fileName, stemp->wordcount);
+
                 if(stemp->link != NULL)
                     printf(" :");
+
                 stemp = stemp->link;
             }
+
             printf("\n");
+
             mtemp = mtemp->link;
         }
+
         printf("\n");
     }
-    printf("------------------------------------------");
 
     return SUCCESS;
 }

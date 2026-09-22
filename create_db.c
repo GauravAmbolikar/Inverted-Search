@@ -2,6 +2,7 @@
 
 int create_db(Flist *f_head, hash_t *ht)
 {
+    printf("\n------------------------------------------------\n");
     Flist *temp = f_head;
 
     while(temp != NULL)
@@ -45,6 +46,7 @@ int create_db(Flist *f_head, hash_t *ht)
                 }
                 mtemp = mtemp->link;
             }
+
             //word not exist
             if(mtemp == NULL)
             {
@@ -93,10 +95,10 @@ int create_db(Flist *f_head, hash_t *ht)
                 newM->sublink = newS;
 
                 //insert newM at beginning of mainNode list
-
                 newM->link = ht[index].link;
                 ht[index].link = newM;
             }
+
             //word exist
             else
             {
@@ -147,12 +149,14 @@ int create_db(Flist *f_head, hash_t *ht)
                     //increase filecount of mtemp
                     mtemp->fileCount++;
                 }
-
             }
         }
 
         fclose(fp);
+        printf("------------------------------------------------\n");
+
         temp = temp->link;
     }
+
     return SUCCESS;
 }
